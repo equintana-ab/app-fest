@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appliance Fest</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="timer.css" />
+  </head>
+  <body>
+    <main class="applianceFest-hero-wrapper">
+      <div class="applianceFest-hero-container">
+        <div class="hero-title-container">
+          <img class="applianceFest-sale-main" src="./img/appFestHeroTitle.png" alt="Abenson Appliance Fest" />
+          <div class="timer" data-target="2026-07-31T23:59:59">
+            <span class="countdown-label">ENDS IN</span>
+            <div class="timer-row">
+              <div class="unit">
+                <h2 id="days" class="box">00</h2>
+                <span class="time-label">days</span>
+              </div>
+              <div class="unit">
+                <h2 id="hours" class="box">00</h2>
+                <span class="time-label">hours</span>
+              </div>
+              <div class="unit">
+                <h2 id="mins" class="box">00</h2>
+                <span class="time-label">mins</span>
+              </div>
+              <div class="unit">
+                <h2 id="secs" class="box">00</h2>
+                <span class="time-label">secs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="applianceFest-grid-icon">
+          <div class="grid-icon-card">
+            <a href="#cropped-banner-container">
+              <img src="./img/washer-icon.png" alt="Icon" />
+              <span class="icon-card-label"
+                >Washer<br />
+                Fest</span
+              >
+            </a>
+          </div>
+          <div class="grid-icon-card">
+            <a href="https://www.abenson.com/campaigns/add-on-deals.html" target="_blank">
+              <img src="./img/cyber-icon.png" alt="Icon" />
+              <span class="icon-card-label"
+                >Cyber<br />
+                Fest</span
+              >
+            </a>
+          </div>
+          <div class="grid-icon-card">
+            <a href="https://www.abenson.com/promos/payment-offers" target="_blank">
+              <img src="./img/installments-icon.png" alt="Icon" />
+              <span class="icon-card-label"
+                >Installment<br />
+                Fest</span
+              >
+            </a>
+          </div>
+
+          <div class="grid-icon-card">
+            <a href="https://www.abenson.com/promos/voucher-page" target="_blank">
+              <img src="./img/installments-icon.png" alt="Icon" />
+              <span class="icon-card-label"
+                >Add-on<br />
+                Deals</span
+              >
+            </a>
+          </div>
+          <div class="grid-icon-card">
+            <a href="https://www.abenson.com/campaigns/free-delivery.html" target="_blank">
+              <img src="./img/washer-icon.png" alt="Icon" />
+              <span class="icon-card-label">Vouchers</span>
+            </a>
+          </div>
+          <div class="grid-icon-card">
+            <a href="https://www.abenson.com/campaigns/free-installation.html" target="_blank">
+              <img src="./img/cyber-icon.png" alt="Icon" />
+              <span class="icon-card-label"
+                >Free <br />
+                Delivery</span
+              >
+            </a>
+          </div>
+        </div>
+        <img class="Anne-KvHero" src="./img/appFestKvHero.png" alt="" />
+      </div>
+      <div class="curve-wrapper"></div>
+    </main>
+    <!-- type="text/simi-script" -->
+    <script>
+      (function () {
+        "use strict";
+
+        // Clear any previous timer from an earlier script run (AJAX re-injection)
+        if (window.campaignPageTimer) {
+          clearInterval(window.campaignPageTimer);
+        }
+
+        const timerEl = document.querySelector(".timer");
+        if (!timerEl) return; // element not in DOM yet/anymore — bail safely
+
+        const target = timerEl.dataset.target;
+        const targetDate = new Date(target);
+
+        function updateTimer() {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+
+          if (distance <= 0) {
+            document.getElementById("days").innerText = "00";
+            document.getElementById("hours").innerText = "00";
+            document.getElementById("mins").innerText = "00";
+            document.getElementById("secs").innerText = "00";
+            clearInterval(window.campaignPageTimer);
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+          document.getElementById("days").innerText = days.toString().padStart(2, "0");
+          document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+          document.getElementById("mins").innerText = mins.toString().padStart(2, "0");
+          document.getElementById("secs").innerText = secs.toString().padStart(2, "0");
+        }
+
+        window.campaignPageTimer = setInterval(updateTimer, 1000);
+        updateTimer();
+      })();
+    </script>
+  </body>
+</html>

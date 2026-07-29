@@ -1,0 +1,168 @@
+/* <style> */
+body {
+  overflow-x: hidden !important;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+.applianceFest-hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 40px 0px 0px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.applianceFest-hero-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 96%;
+  transform: translateX(-50%);
+  background: url(./img/appFestHeroBg.png);
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.curve-wrapper {
+  position: relative;
+  height: clamp(35px, 7vw, 100px);
+}
+.curve-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background-image: url(./img/svgCurvehero.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  z-index: 2;
+}
+@media (width > 767px) {
+  .curve-wrapper::before {
+    background-size: 100% 100%;
+  }
+}
+.applianceFest-hero-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 28px;
+  z-index: 2;
+  justify-content: center;
+  overflow-x: clip;
+}
+/* left image */
+.applianceFest-hero-container .applianceFest-sale-main {
+  width: clamp(350px, 30vw, 429px);
+  height: auto;
+  align-self: center;
+}
+.applianceFest-hero-container .Anne-KvHero {
+  width: clamp(300px, 36vw, 450px);
+  height: auto;
+  align-self: center;
+}
+
+/* grid */
+.applianceFest-grid-icon {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 42px;
+  align-items: flex-start;
+  height: fit-content;
+  align-self: center;
+}
+
+.grid-icon-card a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 10px;
+  padding: 5px 0;
+  transition: transform 0.2s ease;
+}
+.grid-icon-card a:hover {
+  transform: scale(1.1);
+}
+.grid-icon-card a .icon-card-label {
+  font-size: clamp(11px, 1.5vw, 18px);
+  text-align: center;
+  font-weight: 700;
+  color: #07499d;
+}
+.grid-icon-card a img {
+  width: 60px;
+}
+@media (width > 424px) {
+  /* grid */
+  .applianceFest-grid-icon {
+    gap: 35px 75px;
+  }
+}
+@media (width > 735px) {
+  .applianceFest-hero-wrapper {
+    padding: unset;
+  }
+  .applianceFest-hero-container {
+    flex-direction: row;
+    padding: 40px 0 0 10px;
+  }
+  /* grid */
+  .applianceFest-grid-icon {
+    gap: 18px;
+    align-self: flex-start;
+  }
+  .grid-icon-card a .icon-card-label {
+    line-height: 20.52px;
+    letter-spacing: -0.72px;
+  }
+  .grid-icon-card a img {
+    width: 40px;
+  }
+  .applianceFest-hero-container .applianceFest-sale-main {
+    width: 200px;
+  }
+  .applianceFest-hero-container .Anne-KvHero {
+    transform: translateY(27px);
+  }
+  .curve-wrapper::before {
+    top: -21%;
+  }
+}
+@media (width > 1023px) {
+  .applianceFest-hero-wrapper {
+    margin-top: -43px;
+    padding-top: 120px;
+  }
+  .applianceFest-hero-container {
+    gap: 40px;
+  }
+  /* grid */
+  .applianceFest-grid-icon {
+    gap: 30px;
+  }
+  .grid-icon-card a img {
+    width: 65px;
+  }
+  .applianceFest-hero-container .applianceFest-sale-main {
+    width: clamp(292px, 30vw, 438px);
+  }
+  .applianceFest-hero-container .Anne-KvHero {
+    transform: translateY(36px);
+  }
+}
+
+/* </style> */
