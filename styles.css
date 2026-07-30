@@ -22,7 +22,7 @@ body {
   top: 0;
   left: 50%;
   width: 100vw;
-  height: 96%;
+  height: 100%;
   transform: translateX(-50%);
   background: url(./img/appFestHeroBg.png);
   z-index: -1;
@@ -37,7 +37,7 @@ body {
 .curve-wrapper::before {
   content: "";
   position: absolute;
-  top: -80%;
+  top: 0%;
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
@@ -72,6 +72,7 @@ body {
   width: clamp(300px, 36vw, 450px);
   height: auto;
   align-self: center;
+  margin-bottom: -35px;
 }
 
 /* grid */
@@ -106,6 +107,21 @@ body {
 .grid-icon-card a img {
   width: 60px;
 }
+.secondBg {
+  position: relative;
+}
+
+.secondBg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: #97daff;
+  z-index: -1;
+}
 @media (width > 424px) {
   /* grid */
   .applianceFest-grid-icon {
@@ -119,6 +135,7 @@ body {
   .applianceFest-hero-container {
     flex-direction: row;
     padding: 40px 0 0 10px;
+    gap: 18px;
   }
   /* grid */
   .applianceFest-grid-icon {
@@ -137,9 +154,6 @@ body {
   }
   .applianceFest-hero-container .Anne-KvHero {
     transform: translateY(27px);
-  }
-  .curve-wrapper::before {
-    top: -21%;
   }
 }
 @media (width > 1023px) {
